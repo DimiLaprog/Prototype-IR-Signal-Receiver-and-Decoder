@@ -12,11 +12,16 @@ Design and assembly , with a lab partner , of a TV-like signal receiver.
  > * Strictly filtering input signal around 31Khz. This means, frequencies close enough to 31Khz will still pass.
  > * Having perfect smoothing and expected wave forms in every stage.(Oscillations are possible but do not affect the project goal).Only cared about final stage current output.
  
-## DESIGN
-
-
-<img src="Images/design.jpg">
+### Limitations 
+ * sada
 
 #### First Steps
 
-* Theoretically , we gain a signal of 20 mV pp when photodiode is excited.
+* Theoretically , we gain a signal of 20 mV pp when photodiode is excited. Practically we have to 
+
+
+
+## Final Design
+
+
+<img src="Images/design.jpg">
