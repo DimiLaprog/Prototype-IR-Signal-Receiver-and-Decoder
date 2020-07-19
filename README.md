@@ -22,7 +22,7 @@ Design and assembly , with a lab partner , of a TV-like signal receiver.
 ## Final Design
 ## Here's a look of the Final Design , so you can have a reference at what is described below
 
-<img src="Images/design.jpg">
+<img src="Images/DESIGNf.JPG">
 
 
 #### First Steps
