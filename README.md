@@ -33,7 +33,7 @@ Design and assembly , with a lab partner , of a TV-like signal receiver.
    ##### Important point 3 : LTSPICE 
    * When we simulate in LTSPICE, we might be tempted to measure the final point of our signal, right at the inverted input of the final op-amp comparator. This will yield wrong results, because, the RC circuit we used above for smoothing also acts as a Low Pass Filter. Spice takes this filtering into account, even though we have already achieved a relatively DC signal. The correct point of measurement and the result can be seen below.
   ### LT SPICE
-  <img src="SIM%20comparator.JPG">
+  <img src="Images/SIM%20comparator.JPG">
 
    
 
