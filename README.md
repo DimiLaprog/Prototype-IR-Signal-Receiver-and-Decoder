@@ -3,4 +3,4 @@ Design and assembly , with a lab partner , of a TV-like signal receiver.
 
 i have no idea what i'm doing
 # okay?
-![GitHub Logo](/images/logo.png)
+![GitHub Logo](file:///C:/Users/dimla/OneDrive/Desktop/Astrocyte5.jpg)
