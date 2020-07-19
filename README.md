@@ -21,11 +21,21 @@ Design and assembly , with a lab partner , of a TV-like signal receiver.
 
 #### First Steps
 
-   * First Stage: Theoretically , we gain a signal of 20 mV pp when photodiode is excited. Practically we have smoothen this signal, drive it through an op-amp and then we have something measurable. The smoothening part of the first stage is a simple RC component with t >> rise and fall time of diode (100 ns). After measuring the output though at a typical distance we can even see we gain around 60mV pp.
+   * First Stage: Theoretically , we gain a signal of 20 mV pp when photodiode is excited. Practically we have to smoothen this signal, drive it through an op-amp and then we have something measurable. The smoothening part of the first stage is a simple RC component with t >> rise and fall time of diode (100 ns). After measuring the output though at  typical distances we can even see we gain around 60mV pp.
    * Okay now, considering we need 12 volt power line for the op-amp, we set the virtual ground to 6 V (simple voltage divider).
    * Considering above point, we can "guess" we'll need a comparator with a threshold around 6 V. to decode the input signal "pulses". That means 6 volts/30mV= 200 total gain is needed.Of course, higher gain is also possible, but too high of a gain would result in photodiode "dark current" triggering the threshold.
-   * Okay, moving on, let's filter and amplify the signal. We tried to make a bandpass filter around 31 kHz. Reality is,because we did not really care that much that our device operates on exactly 31kHZ, no matter how bad we made this stage, we could always fix the gain in the later stages.
-   * After managing to get around 30.5 gain in this filtering stage,using a classic half wave rectifying op amp 
+   * Second Stage: Moving on, let's filter and amplify the signal. We tried to make a bandpass filter around 31 kHz. Reality is,because we did not really care that much that our device operates on exactly 31kHZ, no matter how bad we made this stage, we could always fix the gain in the later stages.
+   * Third Stage: After managing to get around 30.5 gain in the filtering stage,using a classic half wave rectifier with op amp we can amplify the signal a bit more, around 8.5 times.
+   ##### Important point 1 : Other light sources
+   * Photodiode could also be excited by other light sources. To avoid any sudden "bursts" of voltage that will trigger our comparator, we can cut the gain a little bit with a voltage divider and get the 0.83 of the final value (10k,2.2k).
+   ##### Important point 2 : Smoothing properly to achieve DC
+   * Thus far, we have only achieved a half wave rectification.To make this a full DC signal we need a smoothing part which we can achieven with a simple RC. Becase signal frequency (carrier) is 31kHz, T=0.03 ms we want to achieve a time constant of at least 0.03 ms. At the same time, when the signal is "off", meaning in between tv remote signal pulses, we want the signal output to be off too. Thus, we must aim for a time constant way smaller than the 1/2 period of on-off (modulation signal). We can estimate frequency at around 30 Hz, because we can literally see the on-off pulses. (Led oscillates and it's perfectly normal).We can reach a satisfactory value of 0.073 ms by putting a 33 nf capacitor.
+   ##### Important point 3 : LTSPICE 
+   * When we simulate in LTSPICE, we might be tempted to measure the final point of our signal, right at the inverted input of the final op-amp comparator. This will yield wrong results, because, the RC circuit we used above for smoothing also acts as a Low Pass Filter. Spice takes this filtering into account, even though we have already achieved a relatively DC signal. The correct point of measurement and the result can be seen below.
+  ### LT SPICE
+  <img src="SIM%20comparator.JPG">
+
+   
 
 
 ## Final Design
